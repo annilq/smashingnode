@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>websocket</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<h1>websocket</h1>
+<h2>lateny: <span id="latency"></span>ms</h2>
+
+	<script>
+var lastMessage;
+window.onload = function() {
+	// create socket
+	var ws = new WebSocket("ws://localhost:3000");
+	console.log(ws);
+	ws.onopen = function() {
+		ping();
+	};
+	ws.onmessage = function(ev) {
+		console.log("got %s", ev.data);
+		document.getElementById('latency').innerHTML = new Date - lastMessage;
+		ping();
+	};
+
+	function ping() {
+		lastMessage = +new Date;
+		ws.send("ping");
+	}
+};
+	</script>
+</body>
+</html>
