@@ -15,6 +15,7 @@ var lastMessage;
 window.onload = function() {
 	// create socket
 	var ws = new WebSocket("ws://localhost:3000");
+	ws.protocol="tcp";
 	console.log(ws);
 	ws.onopen = function() {
 		ping();
