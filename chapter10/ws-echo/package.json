@@ -2,7 +2,7 @@
   "name": "ws-echo",
   "version": "0.0.1",
   "dependencies": {
-    "express": "~",
-    "websocket.io": "~"
+    "express": "*",
+    "websocket.io": "*"
   }
 }
