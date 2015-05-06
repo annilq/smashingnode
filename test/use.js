@@ -30,5 +30,5 @@ app.use(function(req, res) {
 	res.end("there is nothing happened");
 });
 http.createServer(app).listen('3000', function() {
-	console.log('Express server listening on port 3000');
+	console.log(' server listening on port 3000');
 });
